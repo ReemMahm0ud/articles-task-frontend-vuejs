@@ -2,7 +2,7 @@
   <div id="nav" class="nav">
     <router-link to="/" class="brand">blog</router-link>
     <nav>
-      <!-- <router-link :to="{ name: 'article-list' }">List</router-link> | -->
+      <router-link :to="{ name: 'article-list' }">List</router-link> |
       <router-link :to="{ name: 'article-create' }">Create</router-link>
     </nav>
   </div>
