@@ -1,7 +1,7 @@
 <template>
   <router-link class="event-link" :to="{ name: 'article-show', params: { id: article.id } }">
     <div class="event-card -shadow">
-      <span class="eyebrow">@{{ article.created_at }}</span>
+      <span class="eyebrow">@{{  moment(String(article.created_at)).format('MM/DD/YYYY hh:mm') }}</span>
       <h4 class="title">{{ article.title }}</h4>
       <BaseIcon name="users">{{ article.created_by }}</BaseIcon>
     </div>
@@ -9,10 +9,16 @@
 </template>
 
 <script>
+var moment = require('moment');
 export default {
   props: {
     article: Object
-  }
+  },
+  data() {
+      return {
+          moment:moment,
+      }
+  },
 }
 </script>
 
